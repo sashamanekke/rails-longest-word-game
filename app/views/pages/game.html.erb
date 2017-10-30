@@ -1,0 +1,14 @@
+<h1>Let's play Numbers & Letters!</h1>
+<p>
+  <% @grid.each do |letter| %>
+    <%= letter[0] %>
+  <% end %>
+</p>
+<form action="/score" method="get">
+  <label for="answer">Give the longest word you can come up with based on the letters from above?</label>
+  <input type="text" id="answer" name="query" placeholder="Your answer">
+  <input type="submit" value="Best answer!">
+  <input type="hidden" name="start_time" value="<%= @start_time %>">
+  <input type="hidden" name="grid" value="<%=@grid_string%>">
+</form>
+
